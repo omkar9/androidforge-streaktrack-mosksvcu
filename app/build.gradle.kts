@@ -62,12 +62,12 @@ dependencies {
     implementation(libs.androidx.material3)
 
     // Material Design (Rule 9)
-    implementation(libs.google.android.material)
+    implementation(libs.material)
 
     // Hilt
     implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
-    kapt(libs.androidx.hilt.compiler) // AndroidX Hilt compiler for Jetpack components
+    kapt(libs.hilt.android.compiler)
+    kapt(libs.hilt.android.compiler) // AndroidX Hilt compiler for Jetpack components
 
     // Room (Rule 6)
     implementation(libs.androidx.room.runtime)
@@ -79,10 +79,10 @@ dependencies {
 
     // Lifecycle
     implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
 
     // Coroutines
-    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.android)
 
     // DataStore (Preferences)
@@ -90,14 +90,14 @@ dependencies {
 
     // WorkManager
     implementation(libs.androidx.work.runtime.ktx)
-    implementation(libs.androidx.hilt.work)
-    kapt(libs.androidx.work.runtime.kapt)
+    implementation(libs.androidx.work.runtime.ktx)
+    kapt(libs.androidx.room.compiler)
 
     // Play Services Ads (AdMob) (Rule 8)
     implementation(libs.play.services.ads)
 
     // Timber (for logging)
-    implementation(libs.timber)
+    implementation(// timber not in toml)
 
     // Test dependencies
     testImplementation(libs.junit)
